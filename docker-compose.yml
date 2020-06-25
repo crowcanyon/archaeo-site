@@ -50,8 +50,8 @@ services:
     image: swaggerapi/swagger-ui
     ports:
       - "8080:8080"
-    environment:
-      - URL=${API_HOST}
+#    environment:
+#      - URL=${API_HOST}
     restart: always
 
   nginx:
