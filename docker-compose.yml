@@ -56,6 +56,7 @@ services:
 
   nginx:
     build: ./nginx
+    restart: unless-stopped
     depends_on:
       - postgrest
       - swagger-ui
