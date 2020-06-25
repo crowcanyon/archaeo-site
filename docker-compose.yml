@@ -54,13 +54,31 @@ services:
       - API_URL=${API_HOST}
     restart: always
 
+#  nginx:
+#    build: ./nginx
+#    depends_on:
+#      - postgrest
+#      - swagger-ui
+#    links:
+#      - postgrest
+#      - swagger-ui
+#    ports:
+#      - "0.0.0.0:80:80"
+      
   nginx:
-    build: ./nginx
+    image: nginx:alpine
+    restart: unless-stopped
     depends_on:
       - postgrest
       - swagger-ui
     links:
       - postgrest
       - swagger-ui
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/www:/var/www/certbot
     ports:
-      - "0.0.0.0:80:80"
+      - "80:80"
+      - "443:443"
+    command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
