@@ -51,9 +51,9 @@ services:
     ports:
       - "8080:8080"
     environment:
-#      - URL=${API_HOST}
+      - URL=${API_HOST}
       - SUPPORTED_SUBMIT_METHODS="['get', 'post']"
-      - URLS="[ { url\: 'https://archaeo.site/swagger/swagger.json', name: 'archaeo.site' } ]"
+#      - URLS="[ { url\: 'https://archaeo.site/swagger/swagger.json', name: 'archaeo.site' } ]"
     restart: always
 
   nginx:
