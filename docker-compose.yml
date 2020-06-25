@@ -51,7 +51,7 @@ services:
     ports:
       - "8080:8080"
     environment:
-      - API_URL=${API_HOST}
+      - URL=${API_HOST}
     restart: always
 
   nginx:
@@ -65,8 +65,8 @@ services:
       - postgrest
       - swagger-ui
     ports:
-      - "0.0.0.0:80:80"
-      - "0.0.0.0:443:443"
+      - "80:80"
+      - "443:443"
     volumes:
 #      - ./nginx:/etc/nginx
       - ./certbot/conf:/etc/letsencrypt
