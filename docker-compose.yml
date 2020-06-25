@@ -39,6 +39,7 @@ services:
       - PGRST_DB_ANON_ROLE=${DB_ANON_ROLE}
       # Sets the Swagger.host parameter. Must be a valid URI.
       - PGRST_SERVER_PROXY_URI=${API_HOST}
+      - PGRST_SERVER_HOST=${API_HOST}
       - PGRST_SERVER_PORT=5000
     restart: always
 
@@ -52,8 +53,6 @@ services:
       - "8080:8080"
     environment:
       - URL=${API_HOST}
-      - SUPPORTED_SUBMIT_METHODS="['get', 'post']"
-#      - URLS="[ { url\: 'https://archaeo.site/swagger/swagger.json', name: 'archaeo.site' } ]"
     restart: always
 
   nginx:
