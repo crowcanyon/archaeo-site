@@ -38,7 +38,7 @@ services:
       # The database role to use when no client authentication is provideds
       - PGRST_DB_ANON_ROLE=${DB_ANON_ROLE}
       # Sets the Swagger.host parameter. Must be a valid URI.
-#      - PGRST_SERVER_PROXY_URI=${API_HOST}
+      - PGRST_SERVER_PROXY_URI=${API_HOST}
       - PGRST_SERVER_PORT=5000
     restart: always
 
