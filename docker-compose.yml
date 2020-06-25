@@ -47,7 +47,7 @@ services:
   ##############
   swagger-ui:
     container_name: swagger-ui
-    image: swaggerapi/swagger-ui:latest
+    image: swaggerapi/swagger-ui
     ports:
       - "8080:8080"
     environment:
@@ -55,6 +55,7 @@ services:
     restart: always
 
   nginx:
+    container_name: nginx
     build: ./nginx
     depends_on:
       - postgrest
@@ -63,4 +64,11 @@ services:
       - postgrest
       - swagger-ui
     ports:
-      - "0.0.0.0:80:80"
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /etc/letsencrypt:/etc/letsencrypt
+  
+  certbot:
+    container_name: certbot
+    image: certbot/certbot
