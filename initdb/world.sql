@@ -9,6 +9,12 @@ BEGIN;
 
 CREATE EXTENSION pg_trgm;
 
+CREATE FUNCTION fuzzy(a text)
+RETURNS 
+SELECT *
+FROM city
+WHERE name % a;
+
 SET client_encoding = 'LATIN1';
 
 CREATE TABLE city (

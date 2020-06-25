@@ -26,6 +26,8 @@ services:
   #############
   postgrest:
     container_name: postgrest
+    depends_on: 
+      - postgrest-db
     image: postgrest/postgrest
     ports:
       - "5000:3000"
@@ -48,6 +50,8 @@ services:
   ##############
   swagger-ui:
     container_name: swagger-ui
+    depends_on:
+      - postgrest
     image: swaggerapi/swagger-ui
     ports:
       - "8080:8080"
