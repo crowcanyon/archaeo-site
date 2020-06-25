@@ -63,7 +63,7 @@ services:
       - postgrest
       - swagger-ui
     ports:
-      - "0.0.0.0:80:80"
+      - "80:80"
       
 #  nginx:
 #    image: nginx:alpine
