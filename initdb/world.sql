@@ -7,6 +7,8 @@
 
 BEGIN;
 
+CREATE EXTENSION pg_trgm;
+
 SET client_encoding = 'LATIN1';
 
 CREATE TABLE city (
