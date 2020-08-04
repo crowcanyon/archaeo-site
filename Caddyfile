@@ -1,0 +1,3 @@
+archaeo.site {
+    proxy / http://sal:8000
+}
