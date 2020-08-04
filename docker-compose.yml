@@ -67,7 +67,7 @@ services:
   ##############
   caddy:
     container_name: caddy
-    image: caddy
+    image: caddy:alpine
     restart: unless-stopped
     depends_on:
       - postgrest
