@@ -1,5 +1,5 @@
 # archaeo-sites
-An archaeological site name disambiguation service. [archaeo.sites]
+An archaeological site name disambiguation service. [archaeo.site]
 
 ## NMCRIS
 1. Log in at [https://nmcris.dca.state.nm.us/NMCRISt/Security/SignIn.aspx]

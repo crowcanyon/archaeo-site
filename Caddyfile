@@ -1,1 +1,9 @@
-archaeo.site
+localhost {
+
+    root * data
+    
+    encode zstd gzip
+
+    templates
+    file_server browse
+}
