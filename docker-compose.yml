@@ -79,8 +79,8 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - $PWD/index.html:/usr/share/caddy/index.html
-      - $PWD/Caddyfile:/etc/caddy/Caddyfile
+      - ./index.html:/usr/share/caddy/index.html
+      - ./Caddyfile:/etc/caddy/Caddyfile
       - caddy_data:/data
       - caddy_config:/config
 
