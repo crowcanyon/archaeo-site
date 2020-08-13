@@ -18,3 +18,10 @@ curl 'https://gis.colorado.gov/compass/OAHP/M_List.asp' \
 -H 'Accept-Encoding: gzip, deflate, br' \
 -H 'Connection: keep-alive' \
 --data 'f_StartRow=26&p_Action=0&pID=0&c_Search_Screen=M_Search_e.asp&c_Title=All+Sites&c_RowsToDisplay=25&c_S_County=%ABMontezuma%BB'
+
+## Caddy setup
+```bash
+
+
+
+```

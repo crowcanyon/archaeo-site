@@ -1,9 +1,18 @@
-localhost {
+archaeo.site
 
-    root * data
-    
-    encode zstd gzip
+root * data
 
-    templates
-    file_server browse
-}
+# Templates give static sites some dynamic features
+templates
+
+# Compress responses according to Accept-Encoding headers
+encode zstd gzip
+
+# Make HTML file extension optional
+try_files {path}.html {path}
+
+# Send API requests to backend
+# reverse_proxy /api/* localhost:9005
+
+# Serve everything else from the file system
+file_server browse
